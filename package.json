@@ -1,0 +1,48 @@
+{
+	"name": "new-test",
+	"version": "0.0.1",
+	"main": "./index.js",
+	"description": "Test task",
+	"scripts": {
+		"start": "echo \"Not intended to run like this\" && exit 1",
+		"lint": "npm-run-all lint-f:*",
+		"lint:eslint": "eslint .",
+		"lint-f:eslint": "eslint . --fix",
+		"lint-f:prettier": "prettier '**/*.{js,json,css,scss,html,hbs,md}' --write",
+		"test": "mocha --exit"
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"cheerio": "^1.0.0-rc.5",
+		"escape-goat": "^3.0.0",
+		"joi": "^17.3.0",
+		"meow": "^9.0.0",
+		"moment": "^2.29.1",
+		"winston": "^3.3.3"
+	},
+	"devDependencies": {
+		"commitizen": "^4.2.3",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^7.18.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-config-prettier": "^7.2.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-security": "^1.4.0",
+		"eslint-plugin-sonarjs": "^0.5.0",
+		"husky": "^4.3.8",
+		"mocha": "^8.2.1",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.2.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint",
+			"prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+		}
+	},
+	"engines": {
+		"node": ">14.0.0"
+	},
+	"license": "MIT"
+}

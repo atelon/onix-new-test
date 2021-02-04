@@ -1,0 +1,22 @@
+# Windows OS files
+Thumbs.db
+Desktop.ini
+
+# Mac DS_Store Files
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Linux OS files
+desktop.ini
+
+# files
+files/
+
+# modules
+node_modules
+
+# package lock
+package-lock.json
